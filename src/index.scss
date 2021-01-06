@@ -48,6 +48,11 @@ html {
     font-size: 0.7rem;
     text-align: center;
     color: $color-dark-grayish-blue-light;
+    visibility: hidden;
+
+    @media #{$screen-medium} {
+      visibility: visible;
+    }
   }
 
   &__dark &__drag {
