@@ -45,17 +45,21 @@ html {
 
   &__drag {
     margin-top: 48px;
+    padding: 4px;
     font-size: 0.7rem;
     text-align: center;
+    background-color: $color-very-light-grayish-blue-light;
     color: $color-dark-grayish-blue-light;
     visibility: hidden;
+    transition: $time-transition;
 
     @media #{$screen-medium} {
       visibility: visible;
     }
   }
 
-  &__dark &__drag {
+  &--dark &__drag {
+    background-color: $color-very-dark-blue-dark;
     color: $color-dark-grayish-blue-dark;
   }
 }
