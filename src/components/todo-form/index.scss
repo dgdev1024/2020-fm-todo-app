@@ -2,7 +2,7 @@
 
 .todo-form {
   display: grid;
-  grid-template-columns: 48px auto;
+  grid-template-columns: 48px auto 48px;
   grid-template-rows: 48px;
   overflow: hidden;
   background-color: $color-very-light-gray-light;
@@ -89,6 +89,26 @@
       outline: none;
     }
   }
+
+  &__submit {
+    background-color: transparent;
+    border: none;
+    color: $color-dark-grayish-blue-light;
+    font-weight: $font-weight-bold;
+    visibility: hidden;
+    opacity: 0;
+    transition: $time-transition;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-very-dark-grayish-blue-light;
+    }
+  }
+
+  &__input:not([value=""]) ~ &__submit {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 .main--dark .todo-form {
@@ -105,6 +125,10 @@
   }
 
   &__input {
+    color: $color-light-grayish-blue-dark;
+  }
+
+  &__submit {
     color: $color-light-grayish-blue-dark;
   }
 }

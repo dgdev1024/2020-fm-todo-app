@@ -53,6 +53,9 @@ const TodoForm = () => {
         onChange={(ev) => setInput(ev.target.value)}
         required
       />
+      <button className="todo-form__submit" type="submit">
+        Add
+      </button>
     </form>
   );
 };
