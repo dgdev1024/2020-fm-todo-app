@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0px;
+
+  &__heading {
+    text-transform: uppercase;
+    letter-spacing: 0.75rem;
+    color: $color-very-light-gray-light;
+  }
+
+  &__dark-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &-icon path {
+      transition: $time-transition;
+    }
+
+    &:hover &-icon path {
+      fill: $color-moon-hover;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.main--dark {
+  .header__dark-toggle:hover .header__dark-toggle-icon path {
+    fill: $color-sun-hover;
+  }
+}

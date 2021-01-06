@@ -1,0 +1,56 @@
+// Import Variables
+@import "./variables.scss";
+
+// CSS Reset
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: $font-family-normal;
+}
+
+// Root Font Size
+html {
+  font-size: $font-size-normal;
+}
+
+// Main Content
+.main {
+  min-height: 100vh;
+  background-color: $color-very-light-grayish-blue-light;
+  background-image: url("./images/bg-mobile-light.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 33%;
+  transition: $time-transition;
+
+  &__container {
+    width: 90%;
+    max-width: 640px;
+    margin: 0px auto;
+  }
+
+  @media #{$screen-medium} {
+    background-image: url("./images/bg-desktop-light.jpg");
+    background-size: contain;
+  }
+
+  &--dark {
+    background-color: $color-very-dark-blue-dark;
+    background-image: url("./images/bg-mobile-dark.jpg");
+
+    @media #{$screen-medium} {
+      background-image: url("./images/bg-desktop-dark.jpg");
+    }
+  }
+
+  &__drag {
+    margin-top: 48px;
+    font-size: 0.7rem;
+    text-align: center;
+    color: $color-dark-grayish-blue-light;
+  }
+
+  &__dark &__drag {
+    color: $color-dark-grayish-blue-dark;
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+
+.todo-list {
+  margin-top: 16px;
+  overflow: hidden;
+  background-color: $color-very-light-gray-light;
+  border-radius: 12px;
+  transition: $time-transition;
+}
+
+.main--dark .todo-list {
+  background-color: $color-very-dark-desaturated-blue-dark;
+}

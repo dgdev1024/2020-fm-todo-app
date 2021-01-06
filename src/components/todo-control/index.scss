@@ -1,0 +1,86 @@
+@import "../../variables.scss";
+
+.todo-control {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 48px 48px;
+  grid-template-areas: "items-left clear" "filters filters";
+  align-items: center;
+
+  @media #{$screen-medium} {
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 48px;
+    grid-template-areas: "items-left filters clear";
+  }
+
+  &__items-left {
+    grid-area: items-left;
+    justify-self: start;
+    padding-left: 12px;
+    font-size: 0.8rem;
+    color: $color-dark-grayish-blue-light;
+  }
+
+  &__filter-strip {
+    grid-area: filters;
+    justify-self: center;
+  }
+
+  &__filter {
+    margin: 8px;
+    font-size: 0.8rem;
+    color: $color-dark-grayish-blue-light;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: $time-transition;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      color: $color-very-dark-grayish-blue-light;
+    }
+
+    &--active {
+      color: $color-bright-blue;
+      font-weight: $font-weight-bold;
+    }
+
+    &--active:hover {
+      color: $color-bright-blue;
+    }
+  }
+
+  &__clear-completed {
+    grid-area: clear;
+    justify-self: end;
+    margin-right: 12px;
+    font-size: 0.8rem;
+    font-weight: $font-weight-bold;
+    color: $color-dark-grayish-blue-light;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: $time-transition;
+
+    &:hover {
+      color: $color-very-dark-grayish-blue-light;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.main--dark .todo-control {
+  &__clear-completed:hover {
+    color: $color-light-grayish-blue-dark;
+  }
+
+  &__filter:not(.todo-control__filter--active):hover {
+    color: $color-light-grayish-blue-dark;
+  }
+}
